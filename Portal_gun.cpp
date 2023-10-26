@@ -3,7 +3,7 @@
 #include "Adafruit_Soundboard.h"
 
 #define LED_PIN          7
-#define NUM_LEDS         12
+#define NUM_LEDS         16
 #define BLUE_PIN         2
 #define ORANGE_PIN       3
 
@@ -20,6 +20,9 @@
 
 SoftwareSerial ss = SoftwareSerial(TX, RX);
 Adafruit_Soundboard sfx = Adafruit_Soundboard(&ss, NULL, RST);
+
+int orangePin;
+int bluePin;
 
 int colorState = 0;
 unsigned long sfxPlayTime = 0;
@@ -64,10 +67,15 @@ void setup() {
 
 void loop() {
   unsigned long currentMillis = millis();
-  if(digitalRead(BLUE_PIN) == 0 && colorState != 1){
+  bluePin = digitalRead(BLUE_PIN);
+  orangePin = digitalRead(ORANGE_PIN);
+  if (bluePin == 1 && orangePin == 1){
+    colorState = 0;
+  }
+  else if(bluePin == 0 && colorState == 0){
     bluePortal();
   }
-  else if(digitalRead(ORANGE_PIN) == 0 && colorState != 2){
+  else if(orangePin == 0 && colorState == 0){
     orangePortal();
   }
 
