@@ -1,7 +1,7 @@
 # DIY Portal Gun
 
 My 3D printed Aperture Science Handheld Portal Device.
-This was printed on a Creality Ender 3 S1 Pro using STL files from [EVARATE on Thingiverse.com](https://www.thingiverse.com/thing:3579224). I am a huge Portal fan and I always wanted one of these. Unfortunately, these are hundreds and hundreds of dollars to buy a decent one online so I took a stab at creating my own. I worked on it on and off for 8 weeks as a side project and I'm pretty happy with how it turned out.
+This was printed on a Creality Ender 3 S1 Pro using STL files from [EVARATE on Thingiverse.com](https://www.thingiverse.com/thing:3579224). I am a huge Portal fan and I always wanted one of these. Unfortunately, these are hundreds and hundreds of dollars to buy a decent one online so I took a stab at creating my own. I worked on it on and off for 8 weeks as a side project and I'm pretty happy with how it turned out. If you have any questions or comments dm me on discord @baid.
 
 ![](https://github.com/Git-baid/PortalGun/blob/main/PortalGunPhotos/20231025_005635.jpg)
 ![](https://github.com/Git-baid/PortalGun/blob/main/PortalGunPhotos/20231025_005656.jpg)
