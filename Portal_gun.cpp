@@ -56,7 +56,7 @@ void setup() {
 
   //5V power source for adafruit amplifier
   pinMode(AMP_PWR, OUTPUT);
-  digitalWrite(AMP_PWR, HIGH);
+  digitalWrite(AMP_PWR, LOW);
   //Ground for adafruit amplifier
   pinMode(AMP_GND, OUTPUT);
   digitalWrite(AMP_GND, LOW);
@@ -85,6 +85,9 @@ void loop() {
     Serial.println("sfx over"); Serial.print(currentMillis-sfxPlayTime);
     soundPlaying = false;
     sfxPlayTime = 0;
+    
+    // turn off power for amp and speaker to save battery
+    digitalWrite(AMP_PWR, LOW);
   }
   FastLED.show(brightness);
   if(brightness > targetBrightness){
@@ -94,10 +97,16 @@ void loop() {
 
 
 void orangePortal(){
+  // give amp and speaker power temporarily
+  digitalWrite(AMP_PWR, HIGH);
+
+  // change LED color
   for(int i = 0; i < NUM_LEDS; i++)
     leds[i] = CRGB(255, 60, 0);
   colorState = 2;
   Serial.println("playing orange");
+
+  // if a sound effect is already playing, stop it
   if(soundPlaying)
     sfx.stop();
   soundPlaying = true;
@@ -110,6 +119,7 @@ void orangePortal(){
   
 }
 void bluePortal(){
+  digitalWrite(AMP_PWR, HIGH);
   for(int i = 0; i < NUM_LEDS; i++)
     leds[i] = CRGB(0, 0, 255);
   colorState = 1;
